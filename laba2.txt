@@ -1,0 +1,441 @@
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол
+$ mkdir test
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол
+$ cd test
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test
+$ git init
+Initialized empty Git repository in C:/Users/vgavr/OneDrive/Рабочий стол/test/.git/
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ touch file1.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git add file1.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ echo Hello world > file1.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git add file1.txt
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git commit -m "first commit"
+[master (root-commit) 259d55a] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git log
+commit 259d55a7bfec59e68b280fa6b64f885b5b6f40dd (HEAD -> master)
+Author: alisa <alisa200000000@gmail.com>
+Date:   Fri Nov 11 17:15:56 2022 +0300
+
+    first commit
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+credential.helper=manager-core
+pull.rebase=false
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+diff.tool=vsdiffmerge
+difftool.prompt=true
+difftool.vsdiffmerge.cmd="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\vsdiffmerge.exe" "$LOCAL" "$REMOTE" //t
+difftool.vsdiffmerge.keepbackup=false
+merge.tool=vsdiffmerge
+mergetool.prompt=true
+mergetool.vsdiffmerge.cmd="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\vsdiffmerge.exe" "$REMOTE" "$LOCAL" "$BASE" "$MERGED" //m
+mergetool.vsdiffmerge.keepbackup=false
+mergetool.vsdiffmerge.trustexitcode=true
+user.name=alisa
+user.email=alisa200000000@gmail.com
+gui.recentrepo=C:/Users/vgavr/GoProjects/ott-service-epgcache
+gui.recentrepo=C:/Users/vgavr/GoProjects/ott-service-partner-accounts-setup
+gui.recentrepo=C:/dev/ott-backend
+gui.recentrepo=C:/dev/ott-rnd-k8s
+difftool.sourcetree.cmd='C:/Users/vgavr/AppData/Local/Programs/Microsoft VS Code/Code.exe' "$LOCAL" "$REMOTE"
+mergetool.sourcetree.cmd=''
+mergetool.sourcetree.trustexitcode=true
+url.https://vlad-gavrilovich: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@github.com.insteadof=https://github.com
+credential.helper=store
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ echo abcdef >> file1.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ cat file1.txt
+Hello world
+abcdef
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git add file1.txt
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file1.txt
+
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git reset file1.txt
+Unstaged changes after reset:
+M       file1.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git diff file1.txt
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+diff --git a/file1.txt b/file1.txt
+index 802992c..4d11fa5 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1 +1,2 @@
+ Hello world
++abcdef
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git restore file1.txt
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ cat file1.txt
+Hello world
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ touch file2.txt
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git add .
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git config --global user.name "user"
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git config --local user.name "alisa"
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git config --local user.name
+alisa
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git config --global user.name
+user
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git branch --list
+* master
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git branch new
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git checkout new
+Switched to branch 'new'
+A       file2.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git branch -d new
+Deleted branch new (was 259d55a).
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (ma
+$ git checkout -b new
+Switched to a new branch 'new'
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git commit -m "second commit"
+[master 87104c1] second commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git checkout new
+Switched to branch 'new'
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new)
+$ git merge master
+Updating e990983..87104c1
+Fast-forward
+ file2.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new)
+$ git checkout -b new2
+Switched to a new branch 'new2'
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new2)
+$ touch conflict.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new2)
+$ echo hello > conflict.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new2)
+$ git add .
+warning: in the working copy of 'conflict.txt', LF will be replaced by CRLF the next time Git touches it
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new2)
+$ git commit -m "first version"
+[new2 262ff1f] first version
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflict.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new2)
+$ git checkout master
+Switched to branch 'master'
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ touch conflict.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git add .
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ echo world > conflict.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git add .
+warning: in the working copy of 'conflict.txt', LF will be replaced by CRLF the next time Git touches it
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git commit -m "second version"
+[master a8ef5b5] second version
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflict.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git merge new2
+Auto-merging conflict.txt
+CONFLICT (add/add): Merge conflict in conflict.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master|MERGING)
+$ git add .
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master|MERGING)
+$ git commit -m "no conflict"
+[master 1e0f60a] no conflict
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git branch -v
+* master 1e0f60a no conflict
+  new    87104c1 second commit
+  new2   262ff1f first version
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git checkout 87104c1
+Note: switching to '87104c1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 87104c1 second commit
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test ((87104c1...))
+$ git switch -
+Previous HEAD position was 87104c1 second commit
+Switched to branch 'master'
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ gitk
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git checkout -b new3
+Switched to a new branch 'new3'
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new3)
+$ touch 3.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new3)
+$ git add .
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new3)
+$ git commit -m "3.txt added"
+[new3 9ae4c09] 3.txt added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 3.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new3)
+$ git checkout master
+Switched to branch 'master'
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ touch 3.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git add .
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git commit -m "3.txt added"
+[master fb93f17] 3.txt added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 3.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git commit -m "version 1"
+[master c0da62b] version 1
+ 1 file changed, 1 insertion(+)
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git checkout new3
+Switched to branch 'new3'
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new3)
+$ echo 45678 > 3.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new3)
+$ git add .
+warning: in the working copy of '3.txt', LF will be replaced by CRLF the next time Git touches it
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new3)
+$ git commit -m "version 2"
+[new3 d12c645] version 2
+ 1 file changed, 1 insertion(+)
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new3)
+$ git checkout master
+Switched to branch 'master'
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git rebase new3
+Auto-merging 3.txt
+CONFLICT (content): Merge conflict in 3.txt
+error: could not apply c0da62b... version 1
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply c0da62b... version 1
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master|REBASE 1/1)
+$ git add .
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master|REBASE 1/1)
+$ git commit -m "no conflict"
+[detached HEAD 9b894af] no conflict
+ 1 file changed, 4 insertions(+)
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master|REBASE 1/1)
+$ git rebase --abort
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git rebase new3
+Auto-merging 3.txt
+CONFLICT (content): Merge conflict in 3.txt
+error: could not apply c0da62b... version 1
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply c0da62b... version 1
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master|REBASE 1/1)
+$  git rebase --skip
+Successfully rebased and updated refs/heads/master.
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git checkout -b new3
+Switched to a new branch 'new3'
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new3)
+$ touch 3.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new3)
+$ git add .
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new3)
+$ git commit -m "3.txt added"
+[new3 9ae4c09] 3.txt added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 3.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (new3)
+$ git checkout master
+Switched to branch 'master'
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ touch 3.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git add .
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git commit -m "3.txt added"
+[master fb93f17] 3.txt added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 3.txt
+
+vgavr@DESKTOP-0FGHLO7 MINGW64 /c/users/vgavr/onedrive/Рабочий стол/test (master)
+$ git rebase new3
+warning: skipped previously applied commit fb93f17
+hint: use --reapply-cherry-picks to include skipped commits
+hint: Disable this message with "git config advice.skippedCherryPicks false"
+Successfully rebased and updated refs/heads/master.
+
+
+
+
+
+
